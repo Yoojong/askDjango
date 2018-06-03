@@ -1,3 +1,33 @@
 <!-- blog/templates/blog/post_list.html -->
-<h1>AskDjango</h1>
-<p>안녕하세요. 여러분의 파이썬/장고 페이스메이커가 되겠습니다. ;)</p>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+                               minimum-scale=1.0,maximum-scale=1.0,
+                               user-scalable=no" />
+      <title> AskDjango's Blog</title>
+  </head>
+  <body>
+    <h1>AskDjango</h1>
+    <ul>
+
+
+    <form action="" method="get">
+        <input type = "text" name="q" value="{{ q }}" />
+        <input type = "submit" value="검색" />
+    </form>
+    {% for post in post_list %}
+        <li>
+          {{ post.id }}
+          {{ post.title }}
+          <small>by {{ post.author }}</small>
+          <small>at {{ post.updated_at }}</small>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+
+    <p>안녕하세요. 여러분의 파이썬/장고 페이스메이커가 되겠습니다. ;)</p>
+  </body>
+</html>
